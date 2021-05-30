@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mestre.master.cs" Inherits="WebUI.Mestre" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        div.container {
+            width: 100%;
+            border: 1px solid gray;
+        }
+        header, footer {
+            padding: 1em;
+            color: white;
+            background-color: black;
+            clear: left;
+            text-align: center;
+        }
+        nav {
+            float: left;
+            max-width: 160px;
+            margin: 0;
+            padding: 1em;
+        }
+        article {
+            margin-left: 170px;
+            border-left: 1px solid gray;
+            padding: 1em;
+            overflow: hidden;
+        }
+    </style>
+    <%--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <header>
+               <marquee><FONT FACE ="Century Gothic" size="6" color ="WHITE"><h2>VIDEOLÂNDIA</h2></marquee></FONT>
+            </header>
+            <nav>
+               <font face = "Century Gothic" sise ="1" color = "black" align = "Center"> MENU<br /></font>
+                <br />
+                <asp:Menu ID="Menu1" runat="server" StaticDisplayLevels="2" BackColor="#F7F6F3" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#7C6F57" StaticSubMenuIndent="10px">
+                    <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#F7F6F3" />
+                    <DynamicSelectedStyle BackColor="black" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página Inicial" Value="Página Inicial">
+                            <%--<asp:MenuItem Text="Consultar" Value="Consultar">
+                                <asp:MenuItem NavigateUrl="~/CadastroFIlmes.aspx" Text="Filmes" Value="Filmes"></asp:MenuItem>
+                            </asp:MenuItem>--%>
+                        </asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Artistas.aspx" Text="Artistas" Value="Artistas"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/PageContato.aspx" Text="Contato" Value="Contato"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/Mensagens.aspx" Text="Mensagens" Value="Mensagens"></asp:MenuItem>
+                    </Items>
+                    <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#5D7B9D" />
+                </asp:Menu>
+                <br />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                <br />
+            </nav>
+            <article>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </article>
+            <footer>
+                &copy;Copyright Videolandia 2020
+            </footer>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+</html>
